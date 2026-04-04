@@ -15,7 +15,7 @@
   <!-- NAV -->
   <nav class="nav" id="nav">
     <a href="/" class="nav-logo">
-      <img src="https://cdn.prod.website-files.com/683e67a235464317a4e9613b/685672a96c2d886fcaf519ec_HigherVision_Logo_White_on_Black.png" alt="Higher Vision Music" />
+      <img src="HigherVision_Logo_White_NoBG.png" alt="Higher Vision Music" />
       <span>Higher Vision Music</span>
     </a>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
@@ -24,8 +24,8 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="/">Home</a></li>
       <li><a href="#playlists">Playlists</a></li>
-      <li><a href="https://open.spotify.com/user/12181937778" target="_blank" rel="noopener" class="btn btn-spotify">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+      <li><a href="https://open.spotify.com/user/12181937778" target="_blank" rel="noopener" class="btn btn-spotify-nav">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
         Follow on Spotify
       </a></li>
     </ul>
@@ -44,7 +44,7 @@
         <span class="reveal teal">Every Genre.</span>
         <span class="reveal">One Vision.</span>
       </h1>
-      <p class="hero-sub reveal">Not the algorithm. Not a label. Just someone who actually listens — building playlists that cut across every genre, every mood, every moment.</p>
+      <p class="hero-sub reveal">Building playlists that cut across every genre, every mood, every moment.</p>
       <div class="hero-actions reveal">
         <a href="#playlists" class="btn btn-primary">Browse Playlists</a>
         <a href="https://open.spotify.com/user/12181937778" target="_blank" rel="noopener" class="btn btn-spotify-lg">
@@ -53,25 +53,11 @@
         </a>
       </div>
     </div>
-    <!-- Ticker -->
+    <!-- Ticker — two identical sets for seamless infinite loop -->
     <div class="ticker">
-      <div class="ticker-track">
-        <span>Chillhop</span><span class="dot">·</span>
-        <span>Ambient</span><span class="dot">·</span>
-        <span>Lofi</span><span class="dot">·</span>
-        <span>Bass</span><span class="dot">·</span>
-        <span>Focus</span><span class="dot">·</span>
-        <span>Electronic</span><span class="dot">·</span>
-        <span>Jazz</span><span class="dot">·</span>
-        <span>Soul</span><span class="dot">·</span>
-        <span>Chillhop</span><span class="dot">·</span>
-        <span>Ambient</span><span class="dot">·</span>
-        <span>Lofi</span><span class="dot">·</span>
-        <span>Bass</span><span class="dot">·</span>
-        <span>Focus</span><span class="dot">·</span>
-        <span>Electronic</span><span class="dot">·</span>
-        <span>Jazz</span><span class="dot">·</span>
-        <span>Soul</span><span class="dot">·</span>
+      <div class="ticker-track" aria-hidden="true">
+        <span>Chillhop</span><span class="dot">·</span><span>Ambient</span><span class="dot">·</span><span>Lofi</span><span class="dot">·</span><span>Bass</span><span class="dot">·</span><span>Focus</span><span class="dot">·</span><span>Electronic</span><span class="dot">·</span><span>Jazz</span><span class="dot">·</span><span>Soul</span><span class="dot">·</span><span>Hip-Hop</span><span class="dot">·</span><span>Dub</span><span class="dot">·</span><span>Chill</span><span class="dot">·</span><span>Beats</span><span class="dot">·</span>
+        <span>Chillhop</span><span class="dot">·</span><span>Ambient</span><span class="dot">·</span><span>Lofi</span><span class="dot">·</span><span>Bass</span><span class="dot">·</span><span>Focus</span><span class="dot">·</span><span>Electronic</span><span class="dot">·</span><span>Jazz</span><span class="dot">·</span><span>Soul</span><span class="dot">·</span><span>Hip-Hop</span><span class="dot">·</span><span>Dub</span><span class="dot">·</span><span>Chill</span><span class="dot">·</span><span>Beats</span><span class="dot">·</span>
       </div>
     </div>
   </section>
@@ -85,12 +71,12 @@
           <span class="stat-label">Curated Playlists</span>
         </div>
         <div class="stat reveal">
-          <span class="stat-number">Growing</span>
-          <span class="stat-label">Weekly on Spotify</span>
+          <span class="stat-number">1,700+</span>
+          <span class="stat-label">Total Playlist Saves</span>
         </div>
         <div class="stat reveal">
-          <span class="stat-number">No Genre</span>
-          <span class="stat-label">Limits. Ever.</span>
+          <span class="stat-number">5+</span>
+          <span class="stat-label">Genres &amp; Moods</span>
         </div>
         <div class="stat reveal">
           <span class="stat-number">1</span>
@@ -119,8 +105,8 @@
         </div>
         <div class="featured-info">
           <span class="eyebrow">Higher Chillhop</span>
-          <h3>Jazz-infused beats for deep focus and late nights</h3>
-          <p>The playlist where chillhop meets soul. Warm basslines, jazzy chords, and rhythms that keep you in the zone — whatever the hour.</p>
+          <h3>Solid curated vibes that hit hard and keep you calm</h3>
+          <p>Beats that headbang but also let you breathe. Higher Chillhop is a carefully curated mix — heavy enough to feel it, smooth enough to stay in flow. No single genre, just the right energy.</p>
           <a href="https://open.spotify.com/playlist/0wnaqMsSPArsxXk1h42DyM" target="_blank" rel="noopener" class="btn btn-primary">
             Open on Spotify
           </a>
@@ -236,7 +222,7 @@
       <div class="follow-cta-inner reveal">
         <p class="eyebrow">Be part of something growing</p>
         <h2>Follow Higher Vision on Spotify</h2>
-        <p>Every follow helps this network grow. New playlists drop regularly — follow the profile and you'll never miss one.</p>
+        <p>Every follow helps this network grow — and every artist on these playlists along with it. New playlists drop regularly. Follow the profile and never miss one.</p>
         <a href="https://open.spotify.com/user/12181937778" target="_blank" rel="noopener" class="btn btn-spotify-lg">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
           Follow on Spotify
@@ -250,7 +236,7 @@
     <div class="container">
       <div class="footer-inner">
         <div class="footer-brand">
-          <img src="https://cdn.prod.website-files.com/683e67a235464317a4e9613b/685672a96c2d886fcaf519ec_HigherVision_Logo_White_on_Black.png" alt="Higher Vision Music" />
+          <img src="HigherVision_Logo_White_NoBG.png" alt="Higher Vision Music" />
           <p>Music without limits.<br/>Every genre. One vision.</p>
         </div>
         <div class="footer-links">

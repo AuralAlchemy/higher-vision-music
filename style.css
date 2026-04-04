@@ -178,7 +178,7 @@ p { color: var(--light); font-size: clamp(0.9rem,1.5vw,1.05rem); max-width: 54ch
   text-transform: uppercase;
   color: var(--light);
 }
-.nav-logo img { height: 28px; width: auto; filter: invert(1); }
+.nav-logo img { height: 28px; width: auto; }
 
 .nav-links {
   display: flex;
@@ -193,7 +193,18 @@ p { color: var(--light); font-size: clamp(0.9rem,1.5vw,1.05rem); max-width: 54ch
   color: var(--light);
   transition: color var(--ease);
 }
-.nav-links a:not(.btn-spotify):hover { color: var(--white); }
+.nav-links a:not(.btn-spotify-nav):hover { color: var(--white); }
+
+.btn-spotify-nav {
+  background: var(--spotify);
+  color: #000 !important;
+  border: none;
+  font-weight: 700;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.62rem;
+  border-radius: 100px;
+}
+.btn-spotify-nav:hover { background: var(--spotify-dk) !important; transform: translateY(-1px); }
 
 .nav-toggle {
   display: none;
@@ -485,7 +496,6 @@ p { color: var(--light); font-size: clamp(0.9rem,1.5vw,1.05rem); max-width: 54ch
 }
 .footer-brand img {
   height: 34px;
-  filter: invert(1);
   margin-bottom: 1.2rem;
 }
 .footer-brand p { font-size: 0.88rem; }
