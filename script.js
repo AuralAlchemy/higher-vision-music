@@ -1,122 +1,70 @@
-/* =============================================
-   HIGHER VISION MUSIC — script.js
-   ============================================= */
+/* Higher Vision Music — script.js */
 
-// --- NAV: scroll-aware background ---
+// Nav scroll
 const nav = document.getElementById('nav');
-
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 60) {
-    nav.classList.add('scrolled');
-  } else {
-    nav.classList.remove('scrolled');
-  }
+  nav.classList.toggle('scrolled', window.scrollY > 50);
 }, { passive: true });
 
-
-// --- MOBILE NAV TOGGLE ---
-const navToggle = document.getElementById('navToggle');
-const navLinks  = document.getElementById('navLinks');
-
-navToggle.addEventListener('click', () => {
-  const isOpen = navLinks.classList.toggle('open');
-  navToggle.setAttribute('aria-expanded', isOpen);
-  // Animate hamburger into X
-  const spans = navToggle.querySelectorAll('span');
-  if (isOpen) {
-    spans[0].style.transform = 'translateY(6.5px) rotate(45deg)';
-    spans[1].style.opacity   = '0';
-    spans[2].style.transform = 'translateY(-6.5px) rotate(-45deg)';
+// Mobile nav toggle
+const toggle = document.getElementById('navToggle');
+const links  = document.getElementById('navLinks');
+toggle.addEventListener('click', () => {
+  const open = links.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', open);
+  const [a, b, c] = toggle.querySelectorAll('span');
+  if (open) {
+    a.style.transform = 'translateY(6.5px) rotate(45deg)';
+    b.style.opacity = '0';
+    c.style.transform = 'translateY(-6.5px) rotate(-45deg)';
   } else {
-    spans[0].style.transform = '';
-    spans[1].style.opacity   = '';
-    spans[2].style.transform = '';
+    a.style.transform = b.style.opacity = c.style.transform = '';
   }
 });
+links.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
+  links.classList.remove('open');
+  toggle.setAttribute('aria-expanded', 'false');
+  toggle.querySelectorAll('span').forEach(s => s.style.transform = s.style.opacity = '');
+}));
 
-// Close nav on link click (mobile)
-navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    navToggle.setAttribute('aria-expanded', 'false');
-    const spans = navToggle.querySelectorAll('span');
-    spans[0].style.transform = '';
-    spans[1].style.opacity   = '';
-    spans[2].style.transform = '';
+// Scroll reveal with stagger
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    // stagger siblings
+    const siblings = [...(entry.target.parentElement?.querySelectorAll('.reveal') || [])];
+    const idx = siblings.indexOf(entry.target);
+    setTimeout(() => entry.target.classList.add('revealed'), idx * 100);
+    observer.unobserve(entry.target);
   });
-});
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => observer.observe(el));
 
+// Playlist filter
+const pills = document.querySelectorAll('.pill');
+const cards = document.querySelectorAll('.playlist-card');
 
-// --- SCROLL REVEAL ---
-const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
-    if (entry.isIntersecting) {
-      // Stagger children within the same parent
-      const delay = entry.target.dataset.delay || 0;
-      setTimeout(() => {
-        entry.target.classList.add('revealed');
-      }, delay);
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, {
-  threshold: 0.12,
-  rootMargin: '0px 0px -40px 0px'
-});
-
-// Add stagger delays to sibling reveal elements
-const revealGroups = {};
-revealEls.forEach(el => {
-  const parent = el.parentElement;
-  if (!revealGroups[parent]) revealGroups[parent] = [];
-  revealGroups[parent].push(el);
-});
-
-Object.values(revealGroups).forEach(group => {
-  group.forEach((el, i) => {
-    if (group.length > 1) el.dataset.delay = i * 120;
-  });
-});
-
-revealEls.forEach(el => revealObserver.observe(el));
-
-
-// --- FAQ ACCORDION ---
-const faqItems = document.querySelectorAll('.faq-item');
-
-faqItems.forEach(item => {
-  const btn    = item.querySelector('.faq-question');
-  const answer = item.querySelector('.faq-answer');
-
-  btn.addEventListener('click', () => {
-    const isOpen = btn.getAttribute('aria-expanded') === 'true';
-
-    // Close all
-    faqItems.forEach(other => {
-      other.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-      other.querySelector('.faq-answer').classList.remove('open');
+pills.forEach(pill => {
+  pill.addEventListener('click', () => {
+    pills.forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+    const filter = pill.dataset.filter;
+    cards.forEach(card => {
+      const tags = card.dataset.tags || '';
+      const show = filter === 'all' || tags.includes(filter);
+      card.classList.toggle('hidden', !show);
     });
-
-    // Open clicked (if it was closed)
-    if (!isOpen) {
-      btn.setAttribute('aria-expanded', 'true');
-      answer.classList.add('open');
-    }
   });
 });
 
-
-// --- SMOOTH ANCHOR SCROLL ---
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', (e) => {
-    const target = document.querySelector(anchor.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      const offset = nav.offsetHeight + 20;
-      const top = target.getBoundingClientRect().top + window.scrollY - offset;
-      window.scrollTo({ top, behavior: 'smooth' });
-    }
+// Smooth anchor scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (!target) return;
+    e.preventDefault();
+    const top = target.getBoundingClientRect().top + scrollY - nav.offsetHeight - 20;
+    window.scrollTo({ top, behavior: 'smooth' });
   });
 });
