@@ -3,265 +3,139 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Higher Vision Music — Music Without Limits.</title>
-  <meta name="description" content="A curated playlist network spanning every genre. Music without limits. Every genre. One vision." />
+  <title>Higher Chillhop — Follow on Spotify</title>
+  <meta name="description" content="Beats that headbang but also let you breathe. Follow Higher Chillhop on Spotify." />
+  <link rel="stylesheet" href="../../style.css" />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Space+Mono&display=swap" rel="stylesheet" />
-</head>
-<body>
 
-  <!-- NAV -->
-  <nav class="nav" id="nav">
-    <a href="/" class="nav-logo">
-      <img src="HigherVision_Logo_White_NoBG.png" alt="Higher Vision Music" />
+  <!-- META PIXEL — replace XXXXXXXXXXXXXXXXXX with your actual Pixel ID -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'XXXXXXXXXXXXXXXXXX');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXXXXX&ev=PageView&noscript=1"/>
+  </noscript>
+</head>
+<body class="lp-body">
+
+  <!-- MINIMAL HEADER — brand only, no nav links -->
+  <header class="lp-header">
+    <a href="/" class="lp-brand">
+      <img src="../../HigherVision_Logo_White_NoBG.png" alt="Higher Vision Music" />
       <span>Higher Vision Music</span>
     </a>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="/">Home</a></li>
-      <li><a href="#playlists">Playlists</a></li>
-      <li><a href="https://open.spotify.com/user/12181937778" target="_blank" rel="noopener" class="btn btn-spotify-nav">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-        Follow on Spotify
-      </a></li>
-    </ul>
-  </nav>
+  </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-bg">
-      <img src="https://cdn.prod.website-files.com/683e67a235464317a4e9613b/6847290cbbdfa4f6f963594e_triangleandcircle2.jpg" alt="" aria-hidden="true" />
-      <div class="hero-overlay"></div>
-    </div>
-    <div class="hero-content">
-      <p class="hero-eyebrow reveal">Curated playlist network</p>
-      <h1 class="hero-headline">
-        <span class="reveal">Music Without Limits.</span>
-        <span class="reveal teal">Every Genre.</span>
-        <span class="reveal">One Vision.</span>
+  <!-- MAIN -->
+  <main class="lp-main">
+
+    <!-- LEFT: copy + CTA -->
+    <div class="lp-left">
+      <p class="lp-eyebrow">Higher Chillhop · On Spotify</p>
+      <h1 class="lp-headline">
+        Beats that<br/>
+        <span class="lp-teal">hit hard.</span><br/>
+        Vibes that<br/>
+        keep you calm.
       </h1>
-      <p class="hero-sub reveal">Building playlists that cut across every genre, every mood, every moment.</p>
-      <div class="hero-actions reveal">
-        <a href="#playlists" class="btn btn-primary">Browse Playlists</a>
-        <a href="https://open.spotify.com/user/12181937778" target="_blank" rel="noopener" class="btn btn-spotify-lg">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-          Follow on Spotify
-        </a>
+      <p class="lp-sub">A carefully curated chillhop playlist — heavy enough to feel it, smooth enough to stay in flow. Updated regularly. Zero filler.</p>
+
+      <!-- SOCIAL PROOF -->
+      <div class="lp-proof">
+        <div class="lp-proof-item">
+          <span class="lp-proof-num">1,700+</span>
+          <span class="lp-proof-label">Playlist saves</span>
+        </div>
+        <div class="lp-proof-divider"></div>
+        <div class="lp-proof-item">
+          <span class="lp-proof-num">Growing</span>
+          <span class="lp-proof-label">Every week</span>
+        </div>
+        <div class="lp-proof-divider"></div>
+        <div class="lp-proof-item">
+          <span class="lp-proof-num">Zero</span>
+          <span class="lp-proof-label">Filler tracks</span>
+        </div>
       </div>
+
+      <!-- PRIMARY CTA -->
+      <a
+        href="https://open.spotify.com/playlist/0wnaqMsSPArsxXk1h42DyM"
+        class="lp-cta"
+        target="_blank"
+        rel="noopener"
+        id="followBtn"
+        onclick="trackFollow()"
+      >
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+        Follow on Spotify — It's Free
+      </a>
+
+      <p class="lp-disclaimer">Opens Spotify. Free to follow. Takes 2 seconds.</p>
     </div>
-    <!-- Ticker — two identical sets for seamless infinite loop -->
-    <div class="ticker">
-      <div class="ticker-track" aria-hidden="true">
-        <span>Chillhop</span><span class="dot">·</span><span>Ambient</span><span class="dot">·</span><span>Lofi</span><span class="dot">·</span><span>Bass</span><span class="dot">·</span><span>Focus</span><span class="dot">·</span><span>Electronic</span><span class="dot">·</span><span>Jazz</span><span class="dot">·</span><span>Soul</span><span class="dot">·</span><span>Hip-Hop</span><span class="dot">·</span><span>Dub</span><span class="dot">·</span><span>Chill</span><span class="dot">·</span><span>Beats</span><span class="dot">·</span>
-        <span>Chillhop</span><span class="dot">·</span><span>Ambient</span><span class="dot">·</span><span>Lofi</span><span class="dot">·</span><span>Bass</span><span class="dot">·</span><span>Focus</span><span class="dot">·</span><span>Electronic</span><span class="dot">·</span><span>Jazz</span><span class="dot">·</span><span>Soul</span><span class="dot">·</span><span>Hip-Hop</span><span class="dot">·</span><span>Dub</span><span class="dot">·</span><span>Chill</span><span class="dot">·</span><span>Beats</span><span class="dot">·</span>
+
+    <!-- RIGHT: embedded player -->
+    <div class="lp-right">
+      <div class="lp-embed-wrap">
+        <iframe
+          id="spotifyEmbed"
+          src="https://open.spotify.com/embed/playlist/0wnaqMsSPArsxXk1h42DyM?utm_source=generator&theme=0"
+          width="100%"
+          height="500"
+          frameborder="0"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy">
+        </iframe>
       </div>
+      <!-- Second CTA below embed on mobile -->
+      <a
+        href="https://open.spotify.com/playlist/0wnaqMsSPArsxXk1h42DyM"
+        class="lp-cta lp-cta-secondary"
+        target="_blank"
+        rel="noopener"
+        onclick="trackFollow()"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+        Follow on Spotify — It's Free
+      </a>
     </div>
-  </section>
 
-  <!-- STATS -->
-  <section class="stats">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat reveal">
-          <span class="stat-number">5</span>
-          <span class="stat-label">Curated Playlists</span>
-        </div>
-        <div class="stat reveal">
-          <span class="stat-number">1,700+</span>
-          <span class="stat-label">Total Playlist Saves</span>
-        </div>
-        <div class="stat reveal">
-          <span class="stat-number">1</span>
-          <span class="stat-label">Vision behind it all</span>
-        </div>
-      </div>
-    </div>
-  </section>
+  </main>
 
-  <!-- FEATURED -->
-  <section class="featured" id="playlists">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="eyebrow">Featured right now</span>
-        <h2>Start here</h2>
-      </div>
-      <!-- Higher Chillhop — featured large -->
-      <div class="featured-main reveal">
-        <div class="featured-embed">
-          <iframe
-            src="https://open.spotify.com/embed/playlist/0wnaqMsSPArsxXk1h42DyM?utm_source=generator&theme=0"
-            width="100%" height="352" frameborder="0"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy">
-          </iframe>
-        </div>
-        <div class="featured-info">
-          <span class="eyebrow">Higher Chillhop</span>
-          <h3>Solid curated vibes that hit hard and keep you calm</h3>
-          <p>Beats that headbang but also let you breathe. Higher Chillhop is a carefully curated mix of the best in chillhop — heavy enough to feel it, smooth enough to stay in flow.</p>
-          <a href="https://open.spotify.com/playlist/0wnaqMsSPArsxXk1h42DyM" target="_blank" rel="noopener" class="btn btn-primary">
-            Open on Spotify
-          </a>
-          <a href="https://open.spotify.com/playlist/0wnaqMsSPArsxXk1h42DyM" target="_blank" rel="noopener" class="btn btn-outline">
-            Follow this playlist ↗
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ALL PLAYLISTS GRID -->
-  <section class="playlists-section">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="eyebrow">The network</span>
-        <h2>All Playlists</h2>
-      </div>
-
-      <!-- Filter pills -->
-      <div class="filter-pills reveal">
-        <button class="pill active" data-filter="all">All</button>
-        <button class="pill" data-filter="chill">Chill</button>
-        <button class="pill" data-filter="focus">Focus</button>
-        <button class="pill" data-filter="bass">Bass</button>
-        <button class="pill" data-filter="ambient">Ambient</button>
-      </div>
-
-      <div class="playlists-grid">
-
-        <div class="playlist-card reveal" data-tags="chill focus">
-          <div class="playlist-embed">
-            <iframe src="https://open.spotify.com/embed/playlist/0wnaqMsSPArsxXk1h42DyM?utm_source=generator&theme=0"
-              width="100%" height="80" frameborder="0"
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"></iframe>
-          </div>
-          <div class="playlist-meta">
-            <h4>Higher Chillhop</h4>
-            <span class="tag">Chillhop</span>
-            <span class="tag">Jazz</span>
-          </div>
-          <a href="https://open.spotify.com/playlist/0wnaqMsSPArsxXk1h42DyM" target="_blank" rel="noopener" class="playlist-link">Open on Spotify ↗</a>
-        </div>
-
-        <div class="playlist-card reveal" data-tags="ambient chill">
-          <div class="playlist-embed">
-            <iframe src="https://open.spotify.com/embed/playlist/4eAlW29otq3YHe5SSlSEF5?utm_source=generator&theme=0"
-              width="100%" height="80" frameborder="0"
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"></iframe>
-          </div>
-          <div class="playlist-meta">
-            <h4>Higher Ambient</h4>
-            <span class="tag">Ambient</span>
-            <span class="tag">Atmospheric</span>
-          </div>
-          <a href="https://open.spotify.com/playlist/4eAlW29otq3YHe5SSlSEF5" target="_blank" rel="noopener" class="playlist-link">Open on Spotify ↗</a>
-        </div>
-
-        <div class="playlist-card reveal" data-tags="chill focus">
-          <div class="playlist-embed">
-            <iframe src="https://open.spotify.com/embed/playlist/5eS8QxWKaRxC3HfMIaMALK?utm_source=generator&theme=0"
-              width="100%" height="80" frameborder="0"
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"></iframe>
-          </div>
-          <div class="playlist-meta">
-            <h4>Higher Lofi</h4>
-            <span class="tag">Lofi</span>
-            <span class="tag">Beats</span>
-          </div>
-          <a href="https://open.spotify.com/playlist/5eS8QxWKaRxC3HfMIaMALK" target="_blank" rel="noopener" class="playlist-link">Open on Spotify ↗</a>
-        </div>
-
-        <div class="playlist-card reveal" data-tags="focus">
-          <div class="playlist-embed">
-            <iframe src="https://open.spotify.com/embed/playlist/2NF0pR8dLlmq0YKxN2cVMr?utm_source=generator&theme=0"
-              width="100%" height="80" frameborder="0"
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"></iframe>
-          </div>
-          <div class="playlist-meta">
-            <h4>Higher Focus</h4>
-            <span class="tag">Focus</span>
-            <span class="tag">Deep Work</span>
-          </div>
-          <a href="https://open.spotify.com/playlist/2NF0pR8dLlmq0YKxN2cVMr" target="_blank" rel="noopener" class="playlist-link">Open on Spotify ↗</a>
-        </div>
-
-        <div class="playlist-card reveal" data-tags="bass">
-          <div class="playlist-embed">
-            <iframe src="https://open.spotify.com/embed/playlist/14RfqVAJRW1vaGnvI6O9Uv?utm_source=generator&theme=0"
-              width="100%" height="80" frameborder="0"
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"></iframe>
-          </div>
-          <div class="playlist-meta">
-            <h4>Higher Bass</h4>
-            <span class="tag">Bass</span>
-            <span class="tag">Electronic</span>
-          </div>
-          <a href="https://open.spotify.com/playlist/14RfqVAJRW1vaGnvI6O9Uv" target="_blank" rel="noopener" class="playlist-link">Open on Spotify ↗</a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- FOLLOW CTA -->
-  <section class="follow-cta">
-    <div class="container">
-      <div class="follow-cta-inner reveal">
-        <p class="eyebrow">Be part of something growing</p>
-        <h2>Follow Higher Vision on Spotify</h2>
-        <p>Every follow helps this network grow — and every artist on these playlists along with it. New playlists drop regularly. Follow the profile and never miss one.</p>
-        <a href="https://open.spotify.com/user/12181937778" target="_blank" rel="noopener" class="btn btn-spotify-lg">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-          Follow on Spotify
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <img src="HigherVision_Logo_White_NoBG.png" alt="Higher Vision Music" />
-          <p>Music without limits.<br/>Every genre. One vision.</p>
-        </div>
-        <div class="footer-links">
-          <div>
-            <h5>Playlists</h5>
-            <ul>
-              <li><a href="https://open.spotify.com/playlist/0wnaqMsSPArsxXk1h42DyM" target="_blank">Higher Chillhop</a></li>
-              <li><a href="https://open.spotify.com/playlist/4eAlW29otq3YHe5SSlSEF5" target="_blank">Higher Ambient</a></li>
-              <li><a href="https://open.spotify.com/playlist/5eS8QxWKaRxC3HfMIaMALK" target="_blank">Higher Lofi</a></li>
-              <li><a href="https://open.spotify.com/playlist/2NF0pR8dLlmq0YKxN2cVMr" target="_blank">Higher Focus</a></li>
-              <li><a href="https://open.spotify.com/playlist/14RfqVAJRW1vaGnvI6O9Uv" target="_blank">Higher Bass</a></li>
-            </ul>
-          </div>
-          <div>
-            <h5>Follow</h5>
-            <ul>
-              <li><a href="https://open.spotify.com/user/12181937778" target="_blank">Spotify</a></li>
-              <li><a href="https://www.instagram.com/_highervisionmusic_/" target="_blank">Instagram</a></li>
-              <li><a href="https://www.facebook.com/highervisionmusic" target="_blank">Facebook</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© 2025 Higher Vision Music. All rights reserved.</p>
-      </div>
-    </div>
+  <!-- MINIMAL FOOTER -->
+  <footer class="lp-footer">
+    <p>© 2025 Higher Vision Music &nbsp;·&nbsp;
+      <a href="https://open.spotify.com/user/12181937778" target="_blank">More Playlists</a> &nbsp;·&nbsp;
+      <a href="/">highervisionmusic.com</a>
+    </p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // Fire Meta Pixel custom event when follow button is clicked
+    function trackFollow() {
+      if (typeof fbq !== 'undefined') {
+        fbq('track', 'Lead');
+        fbq('trackCustom', 'SpotifyFollow', { playlist: 'Higher Chillhop' });
+      }
+    }
+
+    // Also fire on any outbound Spotify link
+    document.querySelectorAll('a[href*="spotify.com"]').forEach(function(link) {
+      link.addEventListener('click', function() {
+        trackFollow();
+      });
+    });
+  </script>
+
 </body>
 </html>
