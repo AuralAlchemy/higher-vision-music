@@ -3,380 +3,265 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Higher Chillhop — Follow on Spotify</title>
-  <meta name="description" content="Beats that hit hard. Vibes that keep you calm. Follow Higher Chillhop on Spotify." />
+  <title>Higher Vision Music — Music Without Limits.</title>
+  <meta name="description" content="A curated playlist network spanning every genre. Music without limits. Every genre. One vision." />
+  <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Space+Mono&display=swap" rel="stylesheet" />
-
-  <!-- META PIXEL — replace XXXXXXXXXXXXXXXXXX with your actual Pixel ID -->
-  <script>
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-    document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'XXXXXXXXXXXXXXXXXX');
-    fbq('track', 'PageView');
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXXXXX&ev=PageView&noscript=1"/>
-  </noscript>
-
-  <style>
-    /* === RESET === */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    /* === VARIABLES === */
-    :root {
-      --bg:          #07141a;
-      --bg-2:        #0d1e23;
-      --surface:     #001e23;
-      --border:      #1e3c3c;
-      --border-2:    #2d4b4b;
-      --muted:       #4b6969;
-      --light:       #8ca0a0;
-      --white:       #ffffff;
-      --violet:      #7373b9;
-      --violet-hi:   #9090d4;
-      --teal-bright: #3d9e8c;
-      --teal-deep:   #143c3c;
-      --spotify:     #1db954;
-      --spotify-dk:  #17a349;
-      --display: 'Bebas Neue', sans-serif;
-      --body:    'DM Sans', sans-serif;
-      --mono:    'Space Mono', monospace;
-      --r:       12px;
-      --ease:    0.35s cubic-bezier(0.4,0,0.2,1);
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      background-image:
-        radial-gradient(ellipse 70% 55% at 75% 15%, rgba(30,80,80,0.4) 0%, transparent 70%),
-        radial-gradient(ellipse 45% 45% at 88% 65%, rgba(115,115,185,0.14) 0%, transparent 60%);
-      color: var(--white);
-      font-family: var(--body);
-      font-weight: 300;
-      line-height: 1.7;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
-
-    /* === HEADER === */
-    header {
-      padding: 1.2rem 2.5rem;
-      display: flex;
-      align-items: center;
-      border-bottom: 1px solid var(--border);
-      background: rgba(7,20,26,0.7);
-      backdrop-filter: blur(12px);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-family: var(--mono);
-      font-size: 0.62rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--light);
-    }
-    .brand img {
-      height: 26px;
-      width: auto;
-      mix-blend-mode: screen;
-    }
-
-    /* === MAIN LAYOUT === */
-    main {
-      flex: 1;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 5rem 2.5rem;
-      width: 100%;
-    }
-
-    /* === LEFT: COPY === */
-    .eyebrow {
-      display: block;
-      font-family: var(--mono);
-      font-size: 0.62rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--violet-hi);
-      margin-bottom: 1.2rem;
-    }
-
-    h1 {
-      font-family: var(--display);
-      font-size: clamp(3rem, 6.5vw, 5.5rem);
-      line-height: 0.95;
-      text-transform: uppercase;
-      letter-spacing: 0.02em;
-      color: var(--white);
-      margin-bottom: 1.5rem;
-    }
-
-    h1 .teal { color: var(--teal-bright); }
-
-    .sub {
-      font-size: clamp(0.92rem, 1.4vw, 1.02rem);
-      color: var(--light);
-      line-height: 1.7;
-      max-width: 40ch;
-      margin-bottom: 2rem;
-    }
-
-    /* === SOCIAL PROOF === */
-    .proof {
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-      margin-bottom: 2.2rem;
-      padding: 1rem 1.4rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--r);
-    }
-
-    .proof-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.15rem;
-    }
-
-    .proof-num {
-      font-family: var(--display);
-      font-size: 1.4rem;
-      line-height: 1;
-      color: var(--white);
-    }
-
-    .proof-label {
-      font-family: var(--mono);
-      font-size: 0.56rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .proof-divider {
-      width: 1px;
-      height: 28px;
-      background: var(--border-2);
-      flex-shrink: 0;
-    }
-
-    /* === CTA BUTTON === */
-    .cta-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-      width: 100%;
-      padding: 1.1rem 2rem;
-      background: var(--spotify);
-      color: #000;
-      font-family: var(--mono);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      border-radius: 100px;
-      border: none;
-      cursor: pointer;
-      transition: var(--ease);
-      text-decoration: none;
-      margin-bottom: 0.75rem;
-      animation: pulse 3s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(29,185,84,0.45); }
-      50%       { box-shadow: 0 0 0 14px rgba(29,185,84,0); }
-    }
-
-    .cta-btn:hover {
-      background: var(--spotify-dk);
-      transform: translateY(-2px);
-      box-shadow: 0 12px 40px rgba(29,185,84,0.4);
-      animation: none;
-    }
-
-    .cta-btn svg { flex-shrink: 0; }
-
-    .disclaimer {
-      font-family: var(--mono);
-      font-size: 0.56rem;
-      letter-spacing: 0.1em;
-      color: var(--muted);
-      text-align: center;
-    }
-
-    /* === RIGHT: EMBED === */
-    .embed-wrap {
-      border-radius: var(--r);
-      overflow: hidden;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      box-shadow: 0 24px 80px rgba(0,0,0,0.6);
-    }
-
-    .embed-wrap iframe { display: block; }
-
-    .cta-mobile {
-      display: none;
-      margin-top: 1.5rem;
-    }
-
-    /* === FOOTER === */
-    footer {
-      padding: 1.4rem 2.5rem;
-      border-top: 1px solid var(--border);
-      text-align: center;
-    }
-
-    footer p {
-      font-family: var(--mono);
-      font-size: 0.58rem;
-      letter-spacing: 0.1em;
-      color: var(--muted);
-    }
-
-    footer a {
-      color: var(--light);
-      transition: color var(--ease);
-    }
-    footer a:hover { color: var(--violet-hi); }
-
-    /* === RESPONSIVE === */
-    @media (max-width: 900px) {
-      main {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-        padding: 3rem 1.5rem;
-      }
-
-      /* embed first on mobile */
-      .col-left  { order: 2; }
-      .col-right { order: 1; }
-
-      h1 { font-size: clamp(2.8rem, 10vw, 4.2rem); }
-
-      .cta-mobile { display: flex; }
-      .embed-wrap iframe { height: 380px; }
-    }
-
-    @media (max-width: 480px) {
-      header { padding: 1rem 1.2rem; }
-      .proof { gap: 0.8rem; padding: 0.9rem 1rem; }
-      .proof-num { font-size: 1.1rem; }
-      footer { padding: 1rem 1.2rem; }
-    }
-  </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <a href="https://auralalchemy.github.io/higher-vision-music/" class="brand">
-      <img src="https://auralalchemy.github.io/higher-vision-music/HigherVision_Logo_White_NoBG.png" alt="Higher Vision Music" />
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="/" class="nav-logo">
+      <img src="HigherVision_Logo_White_NoBG.png" alt="Higher Vision Music" />
       <span>Higher Vision Music</span>
     </a>
-  </header>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/">Home</a></li>
+      <li><a href="#playlists">Playlists</a></li>
+      <li><a href="https://open.spotify.com/user/12181937778" target="_blank" rel="noopener" class="btn btn-spotify-nav">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+        Follow on Spotify
+      </a></li>
+    </ul>
+  </nav>
 
-  <!-- MAIN -->
-  <main>
-
-    <!-- LEFT -->
-    <div class="col-left">
-      <span class="eyebrow">Higher Chillhop · On Spotify</span>
-      <h1>
-        Beats that<br/>
-        <span class="teal">hit hard.</span><br/>
-        Vibes that<br/>
-        keep you calm.
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="https://cdn.prod.website-files.com/683e67a235464317a4e9613b/6847290cbbdfa4f6f963594e_triangleandcircle2.jpg" alt="" aria-hidden="true" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow reveal">Curated playlist network</p>
+      <h1 class="hero-headline">
+        <span class="reveal">Music Without Limits.</span>
+        <span class="reveal teal">Every Genre.</span>
+        <span class="reveal">One Vision.</span>
       </h1>
-      <p class="sub">A carefully curated chillhop playlist — heavy enough to feel it, smooth enough to stay in flow. Updated regularly. Zero filler.</p>
+      <p class="hero-sub reveal">Building playlists that cut across every genre, every mood, every moment.</p>
+      <div class="hero-actions reveal">
+        <a href="#playlists" class="btn btn-primary">Browse Playlists</a>
+        <a href="https://open.spotify.com/user/12181937778" target="_blank" rel="noopener" class="btn btn-spotify-lg">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+          Follow on Spotify
+        </a>
+      </div>
+    </div>
+    <!-- Ticker — two identical sets for seamless infinite loop -->
+    <div class="ticker">
+      <div class="ticker-track" aria-hidden="true">
+        <span>Chillhop</span><span class="dot">·</span><span>Ambient</span><span class="dot">·</span><span>Lofi</span><span class="dot">·</span><span>Bass</span><span class="dot">·</span><span>Focus</span><span class="dot">·</span><span>Electronic</span><span class="dot">·</span><span>Jazz</span><span class="dot">·</span><span>Soul</span><span class="dot">·</span><span>Hip-Hop</span><span class="dot">·</span><span>Dub</span><span class="dot">·</span><span>Chill</span><span class="dot">·</span><span>Beats</span><span class="dot">·</span>
+        <span>Chillhop</span><span class="dot">·</span><span>Ambient</span><span class="dot">·</span><span>Lofi</span><span class="dot">·</span><span>Bass</span><span class="dot">·</span><span>Focus</span><span class="dot">·</span><span>Electronic</span><span class="dot">·</span><span>Jazz</span><span class="dot">·</span><span>Soul</span><span class="dot">·</span><span>Hip-Hop</span><span class="dot">·</span><span>Dub</span><span class="dot">·</span><span>Chill</span><span class="dot">·</span><span>Beats</span><span class="dot">·</span>
+      </div>
+    </div>
+  </section>
 
-      <div class="proof">
-        <div class="proof-item">
-          <span class="proof-num">1,700+</span>
-          <span class="proof-label">Playlist saves</span>
+  <!-- STATS -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat reveal">
+          <span class="stat-number">5</span>
+          <span class="stat-label">Curated Playlists</span>
         </div>
-        <div class="proof-divider"></div>
-        <div class="proof-item">
-          <span class="proof-num">Growing</span>
-          <span class="proof-label">Every week</span>
+        <div class="stat reveal">
+          <span class="stat-number">1,700+</span>
+          <span class="stat-label">Total Playlist Saves</span>
         </div>
-        <div class="proof-divider"></div>
-        <div class="proof-item">
-          <span class="proof-num">Zero</span>
-          <span class="proof-label">Filler tracks</span>
+        <div class="stat reveal">
+          <span class="stat-number">1</span>
+          <span class="stat-label">Vision behind it all</span>
         </div>
       </div>
-
-      <a href="https://open.spotify.com/playlist/0wnaqMsSPArsxXk1h42DyM"
-         class="cta-btn" target="_blank" rel="noopener" onclick="trackFollow()">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-        Follow on Spotify — It's Free
-      </a>
-      <p class="disclaimer">Opens Spotify. Free to follow. Takes 2 seconds.</p>
     </div>
+  </section>
 
-    <!-- RIGHT -->
-    <div class="col-right">
-      <div class="embed-wrap">
-        <iframe
-          src="https://open.spotify.com/embed/playlist/0wnaqMsSPArsxXk1h42DyM?utm_source=generator&theme=0"
-          width="100%" height="500" frameborder="0"
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy">
-        </iframe>
+  <!-- FEATURED -->
+  <section class="featured" id="playlists">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Featured right now</span>
+        <h2>Start here</h2>
       </div>
-      <a href="https://open.spotify.com/playlist/0wnaqMsSPArsxXk1h42DyM"
-         class="cta-btn cta-mobile" target="_blank" rel="noopener" onclick="trackFollow()">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-        Follow on Spotify — It's Free
-      </a>
+      <!-- Higher Chillhop — featured large -->
+      <div class="featured-main reveal">
+        <div class="featured-embed">
+          <iframe
+            src="https://open.spotify.com/embed/playlist/0wnaqMsSPArsxXk1h42DyM?utm_source=generator&theme=0"
+            width="100%" height="352" frameborder="0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+          </iframe>
+        </div>
+        <div class="featured-info">
+          <span class="eyebrow">Higher Chillhop</span>
+          <h3>Solid curated vibes that hit hard and keep you calm</h3>
+          <p>Beats that headbang but also let you breathe. Higher Chillhop is a carefully curated mix of the best in chillhop — heavy enough to feel it, smooth enough to stay in flow.</p>
+          <a href="https://open.spotify.com/playlist/0wnaqMsSPArsxXk1h42DyM" target="_blank" rel="noopener" class="btn btn-primary">
+            Open on Spotify
+          </a>
+          <a href="https://open.spotify.com/playlist/0wnaqMsSPArsxXk1h42DyM" target="_blank" rel="noopener" class="btn btn-outline">
+            Follow this playlist ↗
+          </a>
+        </div>
+      </div>
     </div>
+  </section>
 
-  </main>
+  <!-- ALL PLAYLISTS GRID -->
+  <section class="playlists-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">The network</span>
+        <h2>All Playlists</h2>
+      </div>
+
+      <!-- Filter pills -->
+      <div class="filter-pills reveal">
+        <button class="pill active" data-filter="all">All</button>
+        <button class="pill" data-filter="chill">Chill</button>
+        <button class="pill" data-filter="focus">Focus</button>
+        <button class="pill" data-filter="bass">Bass</button>
+        <button class="pill" data-filter="ambient">Ambient</button>
+      </div>
+
+      <div class="playlists-grid">
+
+        <div class="playlist-card reveal" data-tags="chill focus">
+          <div class="playlist-embed">
+            <iframe src="https://open.spotify.com/embed/playlist/0wnaqMsSPArsxXk1h42DyM?utm_source=generator&theme=0"
+              width="100%" height="80" frameborder="0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"></iframe>
+          </div>
+          <div class="playlist-meta">
+            <h4>Higher Chillhop</h4>
+            <span class="tag">Chillhop</span>
+            <span class="tag">Jazz</span>
+          </div>
+          <a href="https://open.spotify.com/playlist/0wnaqMsSPArsxXk1h42DyM" target="_blank" rel="noopener" class="playlist-link">Open on Spotify ↗</a>
+        </div>
+
+        <div class="playlist-card reveal" data-tags="ambient chill">
+          <div class="playlist-embed">
+            <iframe src="https://open.spotify.com/embed/playlist/4eAlW29otq3YHe5SSlSEF5?utm_source=generator&theme=0"
+              width="100%" height="80" frameborder="0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"></iframe>
+          </div>
+          <div class="playlist-meta">
+            <h4>Higher Ambient</h4>
+            <span class="tag">Ambient</span>
+            <span class="tag">Atmospheric</span>
+          </div>
+          <a href="https://open.spotify.com/playlist/4eAlW29otq3YHe5SSlSEF5" target="_blank" rel="noopener" class="playlist-link">Open on Spotify ↗</a>
+        </div>
+
+        <div class="playlist-card reveal" data-tags="chill focus">
+          <div class="playlist-embed">
+            <iframe src="https://open.spotify.com/embed/playlist/5eS8QxWKaRxC3HfMIaMALK?utm_source=generator&theme=0"
+              width="100%" height="80" frameborder="0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"></iframe>
+          </div>
+          <div class="playlist-meta">
+            <h4>Higher Lofi</h4>
+            <span class="tag">Lofi</span>
+            <span class="tag">Beats</span>
+          </div>
+          <a href="https://open.spotify.com/playlist/5eS8QxWKaRxC3HfMIaMALK" target="_blank" rel="noopener" class="playlist-link">Open on Spotify ↗</a>
+        </div>
+
+        <div class="playlist-card reveal" data-tags="focus">
+          <div class="playlist-embed">
+            <iframe src="https://open.spotify.com/embed/playlist/2NF0pR8dLlmq0YKxN2cVMr?utm_source=generator&theme=0"
+              width="100%" height="80" frameborder="0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"></iframe>
+          </div>
+          <div class="playlist-meta">
+            <h4>Higher Focus</h4>
+            <span class="tag">Focus</span>
+            <span class="tag">Deep Work</span>
+          </div>
+          <a href="https://open.spotify.com/playlist/2NF0pR8dLlmq0YKxN2cVMr" target="_blank" rel="noopener" class="playlist-link">Open on Spotify ↗</a>
+        </div>
+
+        <div class="playlist-card reveal" data-tags="bass">
+          <div class="playlist-embed">
+            <iframe src="https://open.spotify.com/embed/playlist/14RfqVAJRW1vaGnvI6O9Uv?utm_source=generator&theme=0"
+              width="100%" height="80" frameborder="0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"></iframe>
+          </div>
+          <div class="playlist-meta">
+            <h4>Higher Bass</h4>
+            <span class="tag">Bass</span>
+            <span class="tag">Electronic</span>
+          </div>
+          <a href="https://open.spotify.com/playlist/14RfqVAJRW1vaGnvI6O9Uv" target="_blank" rel="noopener" class="playlist-link">Open on Spotify ↗</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOLLOW CTA -->
+  <section class="follow-cta">
+    <div class="container">
+      <div class="follow-cta-inner reveal">
+        <p class="eyebrow">Be part of something growing</p>
+        <h2>Follow Higher Vision on Spotify</h2>
+        <p>Every follow helps this network grow — and every artist on these playlists along with it. New playlists drop regularly. Follow the profile and never miss one.</p>
+        <a href="https://open.spotify.com/user/12181937778" target="_blank" rel="noopener" class="btn btn-spotify-lg">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+          Follow on Spotify
+        </a>
+      </div>
+    </div>
+  </section>
 
   <!-- FOOTER -->
-  <footer>
-    <p>
-      © 2025 Higher Vision Music &nbsp;·&nbsp;
-      <a href="https://open.spotify.com/user/12181937778" target="_blank">More Playlists</a>
-      &nbsp;·&nbsp;
-      <a href="https://auralalchemy.github.io/higher-vision-music/">highervisionmusic.com</a>
-    </p>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="HigherVision_Logo_White_NoBG.png" alt="Higher Vision Music" />
+          <p>Music without limits.<br/>Every genre. One vision.</p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h5>Playlists</h5>
+            <ul>
+              <li><a href="https://open.spotify.com/playlist/0wnaqMsSPArsxXk1h42DyM" target="_blank">Higher Chillhop</a></li>
+              <li><a href="https://open.spotify.com/playlist/4eAlW29otq3YHe5SSlSEF5" target="_blank">Higher Ambient</a></li>
+              <li><a href="https://open.spotify.com/playlist/5eS8QxWKaRxC3HfMIaMALK" target="_blank">Higher Lofi</a></li>
+              <li><a href="https://open.spotify.com/playlist/2NF0pR8dLlmq0YKxN2cVMr" target="_blank">Higher Focus</a></li>
+              <li><a href="https://open.spotify.com/playlist/14RfqVAJRW1vaGnvI6O9Uv" target="_blank">Higher Bass</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Follow</h5>
+            <ul>
+              <li><a href="https://open.spotify.com/user/12181937778" target="_blank">Spotify</a></li>
+              <li><a href="https://www.instagram.com/_highervisionmusic_/" target="_blank">Instagram</a></li>
+              <li><a href="https://www.facebook.com/highervisionmusic" target="_blank">Facebook</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Higher Vision Music. All rights reserved.</p>
+      </div>
+    </div>
   </footer>
 
-  <script>
-    function trackFollow() {
-      if (typeof fbq !== 'undefined') {
-        fbq('track', 'Lead');
-        fbq('trackCustom', 'SpotifyFollow', { playlist: 'Higher Chillhop' });
-      }
-    }
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
