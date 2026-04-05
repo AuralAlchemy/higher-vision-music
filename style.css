@@ -450,19 +450,35 @@ p { color: var(--light); font-size: clamp(0.9rem,1.5vw,1.05rem); max-width: 54ch
   color: var(--muted);
 }
 
-.playlist-link {
-  display: block;
-  padding: 0.75rem 1.2rem;
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--violet-hi);
+.playlist-actions {
+  display: flex;
   border-top: 1px solid var(--border);
   margin-top: auto;
+}
+
+.playlist-link,
+.playlist-explore {
+  display: block;
+  flex: 1;
+  padding: 0.75rem 1rem;
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   transition: color var(--ease), background var(--ease);
+  text-align: center;
+}
+
+.playlist-link {
+  color: var(--light);
+  border-right: 1px solid var(--border);
 }
 .playlist-link:hover { color: var(--white); background: var(--surface-2); }
+
+.playlist-explore {
+  color: var(--violet-hi);
+}
+.playlist-explore:hover { color: var(--white); background: var(--surface-2); }
 
 /* ---- FOLLOW CTA ---- */
 .follow-cta {
