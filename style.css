@@ -178,7 +178,7 @@ p { color: var(--light); font-size: clamp(0.9rem,1.5vw,1.05rem); max-width: 54ch
   text-transform: uppercase;
   color: var(--light);
 }
-.nav-logo img { height: 28px; width: auto; }
+.nav-logo img { height: 32px; width: auto; mix-blend-mode: screen; }
 
 .nav-links {
   display: flex;
@@ -320,7 +320,7 @@ p { color: var(--light); font-size: clamp(0.9rem,1.5vw,1.05rem); max-width: 54ch
 }
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1px;
   background: var(--border);
 }
@@ -495,7 +495,8 @@ p { color: var(--light); font-size: clamp(0.9rem,1.5vw,1.05rem); max-width: 54ch
   margin-bottom: 4rem;
 }
 .footer-brand img {
-  height: 34px;
+  height: 40px;
+  mix-blend-mode: screen;
   margin-bottom: 1.2rem;
 }
 .footer-brand p { font-size: 0.88rem; }
