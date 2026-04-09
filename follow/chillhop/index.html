@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Higher Chillhop - Follow on Spotify</title>
+  <meta name="description" content="A carefully curated chillhop playlist. The kind of music that gets you grooving without pulling you out of your flow state." />
   <link rel="icon" type="image/png" href="https://auralalchemy.github.io/higher-vision-music/HigherVision_Logo_White_NoBG.png" />
-  <meta name="description" content="A carefully curated chillhop playlist. The kind of music that gets you grooving without pulling you out of your flow state. Updated regularly. Zero filler." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Space+Mono&display=swap" rel="stylesheet" />
-  <!-- META PIXEL -- replace XXXXXXXXXXXXXXXXXX with your actual Pixel ID -->
+  <!-- META PIXEL - replace XXXXXXXXXXXXXXXXXX with your actual Pixel ID -->
   <script>
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
@@ -43,6 +43,8 @@
     }
     a{color:inherit;text-decoration:none}
     img{display:block;max-width:100%}
+
+    /* HEADER */
     header{
       padding:1.2rem 2.5rem;display:flex;align-items:center;
       border-bottom:1px solid var(--border);background:rgba(7,20,26,0.7);
@@ -50,49 +52,71 @@
     }
     .brand{display:flex;align-items:center;gap:0.75rem;font-family:var(--mono);
       font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--light)}
-    .brand img{height:26px;width:auto;mix-blend-mode:screen}
-    main{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;
-      max-width:1100px;margin:0 auto;padding:5rem 2.5rem;width:100%}
+    .brand img{height:26px;width:auto;}
+
+    /* MAIN GRID */
+    main{
+      flex:1;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;
+      max-width:1100px;margin:0 auto;padding:5rem 2.5rem;width:100%;
+    }
+
+    /* LEFT */
     .eyebrow{display:block;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.2em;
       text-transform:uppercase;color:var(--violet-hi);margin-bottom:1.2rem}
-    h1{font-family:var(--display);font-size:clamp(2rem,4vw,3.4rem);line-height:0.95;
-      text-transform:uppercase;letter-spacing:0.02em;color:var(--white);margin-bottom:1.5rem}
+    h1{
+      font-family:var(--display);font-size:clamp(2.4rem,5vw,4.2rem);line-height:0.95;
+      text-transform:uppercase;letter-spacing:0.02em;color:var(--white);margin-bottom:1.5rem;
+    }
     h1 .teal{color:var(--teal-bright)}
     .sub{font-size:clamp(0.92rem,1.4vw,1.02rem);color:var(--light);line-height:1.7;
       max-width:40ch;margin-bottom:2rem}
-    .proof{display:flex;align-items:center;gap:1.2rem;margin-bottom:2.2rem;
-      padding:1rem 1.4rem;background:var(--surface);border:1px solid var(--border);
-      border-radius:var(--r)}
-    .proof-item{display:flex;flex-direction:column;gap:0.15rem}
-    .proof-num{font-family:var(--display);font-size:1.4rem;line-height:1;color:var(--white)}
-    .proof-label{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.12em;
-      text-transform:uppercase;color:var(--muted)}
 
-    .proof-live { position: relative; }
-    .live-dot {
-      width: 6px; height: 6px;
-      background: var(--teal-bright);
-      border-radius: 50%;
-      display: inline-block;
-      margin-bottom: 4px;
-      animation: livePulse 1.8s ease-in-out infinite;
+    /* PROOF BAR */
+    .proof{
+      display:flex;align-items:center;gap:0;margin-bottom:2rem;
+      background:var(--surface);border:1px solid var(--border);border-radius:var(--r);
+      overflow:hidden;
     }
-    @keyframes livePulse {
-      0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 0 rgba(61,158,140,0.5); }
-      50% { opacity: 0.6; transform: scale(0.8); box-shadow: 0 0 0 4px rgba(61,158,140,0); }
+    .proof-item{
+      display:flex;flex-direction:column;gap:0.2rem;
+      padding:1rem 1.2rem;flex:1;
     }
-    .proof-live .proof-num {
-      color: var(--teal-bright);
+    .proof-num{
+      font-family:var(--display);font-size:1.4rem;line-height:1;color:var(--white);
     }
-    .proof-divider{width:1px;height:28px;background:var(--border-2);flex-shrink:0}
+    .proof-label{
+      font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;
+      text-transform:uppercase;color:var(--muted);
+    }
+    .proof-divider{width:1px;background:var(--border-2);align-self:stretch;flex-shrink:0}
+
+    /* LIVE STREAM item */
+    .proof-live .proof-num{color:var(--teal-bright)}
+    .proof-live-label{
+      display:flex;align-items:center;gap:0.4rem;
+    }
+    .live-dot{
+      width:5px;height:5px;background:var(--teal-bright);border-radius:50%;flex-shrink:0;
+      animation:livePulse 1.8s ease-in-out infinite;
+    }
+    @keyframes livePulse{
+      0%,100%{opacity:1;transform:scale(1)}
+      50%{opacity:0.4;transform:scale(0.7)}
+    }
+
+    /* TAGS */
     .tags{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;
       text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem}
-    .cta-btn{display:flex;align-items:center;justify-content:center;gap:0.75rem;
+
+    /* CTA */
+    .cta-btn{
+      display:flex;align-items:center;justify-content:center;gap:0.75rem;
       width:100%;padding:1.1rem 2rem;background:var(--spotify);color:#000;
       font-family:var(--mono);font-size:0.75rem;font-weight:700;letter-spacing:0.08em;
       text-transform:uppercase;border-radius:100px;border:none;cursor:pointer;
       transition:var(--ease);text-decoration:none;margin-bottom:0.75rem;
-      animation:pulse 3s ease-in-out infinite}
+      animation:pulse 3s ease-in-out infinite;
+    }
     @keyframes pulse{
       0%,100%{box-shadow:0 0 0 0 rgba(29,185,84,0.45)}
       50%{box-shadow:0 0 0 14px rgba(29,185,84,0)}
@@ -102,70 +126,57 @@
     .cta-btn svg{flex-shrink:0}
     .disclaimer{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.1em;
       color:var(--muted);text-align:center}
-    .embed-wrap{border-radius:var(--r);overflow:hidden;border:1px solid var(--border);
-      background:var(--surface);box-shadow:0 24px 80px rgba(0,0,0,0.6)}
+
+    /* RIGHT: EMBED */
+    .embed-wrap{
+      border-radius:var(--r);overflow:hidden;border:1px solid var(--border);
+      background:var(--surface);box-shadow:0 24px 80px rgba(0,0,0,0.6);
+    }
     .embed-wrap iframe{display:block}
     .cta-mobile{display:none;margin-top:1.5rem}
+
+    /* FOOTER */
     footer{padding:1.4rem 2.5rem;border-top:1px solid var(--border);text-align:center}
     footer p{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.1em;color:var(--muted)}
     footer a{color:var(--light);transition:color var(--ease)}
     footer a:hover{color:var(--violet-hi)}
+
+    /* RESPONSIVE */
     @media(max-width:900px){
       main{grid-template-columns:1fr;gap:3rem;padding:3rem 1.5rem}
       .col-left{order:2}.col-right{order:1}
-      h1{font-size:clamp(2rem,7vw,3rem)}
+      h1{font-size:clamp(2.4rem,9vw,3.8rem)}
       .cta-mobile{display:flex}
       .embed-wrap iframe{height:380px}
     }
+    @media(max-width:600px){
+      .proof{flex-wrap:wrap}
+      .proof-item{min-width:40%}
+      .proof-divider{display:none}
+    }
     @media(max-width:480px){
       header{padding:1rem 1.2rem}
-      .proof{gap:0.8rem;padding:0.9rem 1rem}
-      .proof-num{font-size:1.1rem}
       footer{padding:1rem 1.2rem}
-    }
-
-    .stream-counter {
-      font-family: var(--mono);
-      font-size: 0.62rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .stream-counter span {
-      font-family: var(--display);
-      font-size: 1.1rem;
-      color: var(--teal-bright);
-      letter-spacing: 0.02em;
-    }
-    .stream-pulse {
-      width: 6px; height: 6px;
-      background: var(--teal-bright);
-      border-radius: 50%;
-      animation: streamPulse 2s ease-in-out infinite;
-      flex-shrink: 0;
-    }
-    @keyframes streamPulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.7); }
     }
   </style>
 </head>
 <body>
+
   <header>
     <a href="https://auralalchemy.github.io/higher-vision-music/" class="brand">
       <img src="https://auralalchemy.github.io/higher-vision-music/HigherVision_Logo_White_NoBG.png" alt="Higher Vision Music" />
       <span>Higher Vision Music</span>
     </a>
   </header>
+
   <main>
+    <!-- LEFT -->
     <div class="col-left">
       <span class="eyebrow">Higher Chillhop · On Spotify</span>
       <h1><span class="teal">Beats</span> that make your head nod.<br/><span class="teal">Smooth vibes</span> that keep you flowing.</h1>
       <p class="sub">A carefully curated chillhop playlist. The kind of music that gets you grooving without pulling you out of your flow state. Updated regularly. Zero filler.</p>
+
+      <!-- PROOF BAR -->
       <div class="proof">
         <div class="proof-item">
           <span class="proof-num">1,700+</span>
@@ -173,9 +184,11 @@
         </div>
         <div class="proof-divider"></div>
         <div class="proof-item proof-live">
-          <span class="live-dot"></span>
           <span class="proof-num" id="streamCount">--</span>
-          <span class="proof-label">Monthly streams</span>
+          <span class="proof-live-label">
+            <span class="live-dot"></span>
+            <span class="proof-label">Monthly streams</span>
+          </span>
         </div>
         <div class="proof-divider"></div>
         <div class="proof-item">
@@ -188,8 +201,9 @@
           <span class="proof-label">Vision</span>
         </div>
       </div>
-      </div>
+
       <p class="tags">Chillhop · Vibes · Beats</p>
+
       <a href="https://open.spotify.com/playlist/0wnaqMsSPArsxXk1h42DyM"
          class="cta-btn" target="_blank" rel="noopener" onclick="trackFollow()">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
@@ -197,20 +211,24 @@
       </a>
       <p class="disclaimer">Opens Spotify. Free to follow.</p>
     </div>
+
+    <!-- RIGHT -->
     <div class="col-right">
       <div class="embed-wrap">
-        <iframe src="https://open.spotify.com/embed/playlist/0wnaqMsSPArsxXk1h42DyM?utm_source=generator&theme=0"
+        <iframe
+          src="https://open.spotify.com/embed/playlist/0wnaqMsSPArsxXk1h42DyM?utm_source=generator&theme=0"
           width="100%" height="500" frameborder="0"
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           loading="lazy"></iframe>
       </div>
       <a href="https://open.spotify.com/playlist/0wnaqMsSPArsxXk1h42DyM"
          class="cta-btn cta-mobile" target="_blank" rel="noopener" onclick="trackFollow()">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
         Follow on Spotify
       </a>
     </div>
   </main>
+
   <footer>
     <p>
       2025 Higher Vision Music &nbsp;·&nbsp;
@@ -219,39 +237,36 @@
       <a href="https://auralalchemy.github.io/higher-vision-music/">Higher Vision Music</a>
     </p>
   </footer>
-  <script>
 
-    // Live stream counter
+  <script>
     const BASE_STREAMS = 4200;
-    const INCREMENT_PER_HOUR = 18;
-    const TICK_MS = 14400000; // every 4 hours
+    const TICK_MS = 14400000;
+    const INCREMENT = 18;
 
     function getStreamCount() {
-      const stored = localStorage.getItem('hvm_streams');
-      const storedTime = localStorage.getItem('hvm_streams_time');
-      const now = Date.now();
-      if (stored && storedTime) {
-        const elapsed = now - parseInt(storedTime);
-        const increments = Math.floor(elapsed / TICK_MS);
-        const current = parseInt(stored) + (increments * INCREMENT_PER_HOUR);
-        return current;
-      }
-      // First visit - seed based on time since epoch to feel organic
-      const seed = BASE_STREAMS + Math.floor((now / 1000 / 3600) % 500);
-      localStorage.setItem('hvm_streams', seed);
-      localStorage.setItem('hvm_streams_time', now);
-      return seed;
+      try {
+        const stored = localStorage.getItem('hvm_streams');
+        const storedTime = localStorage.getItem('hvm_streams_time');
+        const now = Date.now();
+        if (stored && storedTime) {
+          const elapsed = now - parseInt(storedTime);
+          const increments = Math.floor(elapsed / TICK_MS);
+          return parseInt(stored) + (increments * INCREMENT);
+        }
+        const seed = BASE_STREAMS + Math.floor((now / 1000 / 3600) % 500);
+        localStorage.setItem('hvm_streams', seed);
+        localStorage.setItem('hvm_streams_time', now);
+        return seed;
+      } catch(e) { return BASE_STREAMS; }
     }
 
     function formatStreams(n) {
-      if (n >= 1000) return (n / 1000).toFixed(1) + 'K';
-      return n.toString();
+      return n >= 1000 ? (n / 1000).toFixed(1) + 'K' : n.toString();
     }
 
     function updateCounter() {
-      const count = getStreamCount();
       const el = document.getElementById('streamCount');
-      if (el) el.textContent = formatStreams(count);
+      if (el) el.textContent = formatStreams(getStreamCount());
     }
 
     updateCounter();
