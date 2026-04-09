@@ -92,6 +92,10 @@
 
     /* LIVE STREAM item */
     .proof-live .proof-num{color:var(--teal-bright)}
+    .proof-num-live{
+      display:flex;align-items:center;gap:0.35rem;
+      font-family:var(--display);font-size:1.4rem;line-height:1;color:var(--teal-bright);
+    }
     .proof-live-label{
       display:flex;align-items:center;gap:0.4rem;
     }
@@ -184,11 +188,11 @@
         </div>
         <div class="proof-divider"></div>
         <div class="proof-item proof-live">
-          <span class="proof-num" id="streamCount">--</span>
-          <span class="proof-live-label">
+          <span class="proof-num-live">
             <span class="live-dot"></span>
-            <span class="proof-label">Monthly streams</span>
+            <span id="streamCount">--</span>
           </span>
+          <span class="proof-label">Monthly streams</span>
         </div>
         <div class="proof-divider"></div>
         <div class="proof-item">
