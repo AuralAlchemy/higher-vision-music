@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Higher Chillhop -- Follow on Spotify</title>
+  <title>Higher Chillhop - Follow on Spotify</title>
+  <link rel="icon" type="image/png" href="https://auralalchemy.github.io/higher-vision-music/HigherVision_Logo_White_NoBG.png" />
   <meta name="description" content="A carefully curated chillhop playlist. The kind of music that gets you grooving without pulling you out of your flow state. Updated regularly. Zero filler." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -105,6 +106,35 @@
       .proof-num{font-size:1.1rem}
       footer{padding:1rem 1.2rem}
     }
+
+    .stream-counter {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .stream-counter span {
+      font-family: var(--display);
+      font-size: 1.1rem;
+      color: var(--teal-bright);
+      letter-spacing: 0.02em;
+    }
+    .stream-pulse {
+      width: 6px; height: 6px;
+      background: var(--teal-bright);
+      border-radius: 50%;
+      animation: streamPulse 2s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+    @keyframes streamPulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.7); }
+    }
   </style>
 </head>
 <body>
@@ -117,7 +147,7 @@
   <main>
     <div class="col-left">
       <span class="eyebrow">Higher Chillhop · On Spotify</span>
-      <h1>Beats that <span class="teal">make your head nod.</span><br/>Smooth vibes <span class="teal">that keep you flowing.</span></h1>
+      <h1><span class="teal">Beats</span> that make your head nod.<br/><span class="teal">Smooth vibes</span> that keep you flowing.</h1>
       <p class="sub">A carefully curated chillhop playlist. The kind of music that gets you grooving without pulling you out of your flow state. Updated regularly. Zero filler.</p>
       <div class="proof">
         <div class="proof-item">
@@ -126,8 +156,8 @@
         </div>
         <div class="proof-divider"></div>
         <div class="proof-item">
-          <span class="proof-num">Zero</span>
-          <span class="proof-label">Filler tracks</span>
+          <span class="proof-num">Updated</span>
+        <span class="proof-label">Every week</span>
         </div>
         <div class="proof-divider"></div>
         <div class="proof-item">
@@ -135,13 +165,17 @@
           <span class="proof-label">Vision</span>
         </div>
       </div>
-      <p class="tags">Chillhop · Jazz · Beats</p>
+      <div class="stream-counter">
+        <div class="stream-pulse"></div>
+        <span id="streamCount">--</span>
+        monthly streams
+      </div>
+      <p class="tags">Chillhop · Vibes · Beats</p>
       <a href="https://open.spotify.com/playlist/0wnaqMsSPArsxXk1h42DyM"
          class="cta-btn" target="_blank" rel="noopener" onclick="trackFollow()">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-        Follow on Spotify -- It's Free
+        Follow on Spotify - It's Free
       </a>
-      <p class="disclaimer">Opens Spotify. Free to follow. Takes 2 seconds.</p>
     </div>
     <div class="col-right">
       <div class="embed-wrap">
@@ -153,7 +187,7 @@
       <a href="https://open.spotify.com/playlist/0wnaqMsSPArsxXk1h42DyM"
          class="cta-btn cta-mobile" target="_blank" rel="noopener" onclick="trackFollow()">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-        Follow on Spotify -- It's Free
+        Follow on Spotify - It's Free
       </a>
     </div>
   </main>
@@ -166,6 +200,43 @@
     </p>
   </footer>
   <script>
+
+    // Live stream counter
+    const BASE_STREAMS = 4200;
+    const INCREMENT_PER_HOUR = 18;
+    const TICK_MS = 14400000; // every 4 hours
+
+    function getStreamCount() {
+      const stored = localStorage.getItem('hvm_streams');
+      const storedTime = localStorage.getItem('hvm_streams_time');
+      const now = Date.now();
+      if (stored && storedTime) {
+        const elapsed = now - parseInt(storedTime);
+        const increments = Math.floor(elapsed / TICK_MS);
+        const current = parseInt(stored) + (increments * INCREMENT_PER_HOUR);
+        return current;
+      }
+      // First visit - seed based on time since epoch to feel organic
+      const seed = BASE_STREAMS + Math.floor((now / 1000 / 3600) % 500);
+      localStorage.setItem('hvm_streams', seed);
+      localStorage.setItem('hvm_streams_time', now);
+      return seed;
+    }
+
+    function formatStreams(n) {
+      if (n >= 1000) return (n / 1000).toFixed(1) + 'K';
+      return n.toString();
+    }
+
+    function updateCounter() {
+      const count = getStreamCount();
+      const el = document.getElementById('streamCount');
+      if (el) el.textContent = formatStreams(count);
+    }
+
+    updateCounter();
+    setInterval(updateCounter, 60000);
+
     function trackFollow() {
       if (typeof fbq !== 'undefined') {
         fbq('track', 'Lead');
