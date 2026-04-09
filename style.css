@@ -316,8 +316,9 @@ p { color: var(--light); font-size: clamp(0.9rem,1.5vw,1.05rem); max-width: 54ch
 .stats {
   background: var(--bg-2);
   border-bottom: 1px solid var(--border);
-  padding: 3rem 0;
+  padding: 0;
 }
+.stats .container { padding: 0; max-width: 100%; }
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
