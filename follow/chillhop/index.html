@@ -261,7 +261,9 @@
         localStorage.setItem('hvm_streams', seed);
         localStorage.setItem('hvm_streams_time', now);
         return seed;
-      } catch(e) { return BASE_STREAMS; }
+      } catch(e) {
+        return BASE_STREAMS + Math.floor((Date.now() / 1000 / 3600) % 500);
+      }
     }
 
     function formatStreams(n) {
@@ -274,6 +276,7 @@
     }
 
     updateCounter();
+    if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", updateCounter); }
     setInterval(updateCounter, 60000);
 
     function trackFollow() {

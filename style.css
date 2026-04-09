@@ -320,9 +320,30 @@ p { color: var(--light); font-size: clamp(0.9rem,1.5vw,1.05rem); max-width: 54ch
 }
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1px;
   background: var(--border);
+  width: 100%;
+}
+.stat-number-live {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  line-height: 1;
+  color: var(--teal-bright);
+}
+.stat-live-dot {
+  width: 7px; height: 7px;
+  background: var(--teal-bright);
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: statPulse 1.8s ease-in-out infinite;
+}
+@keyframes statPulse {
+  0%,100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.7); }
 }
 .stat {
   background: var(--bg-2);

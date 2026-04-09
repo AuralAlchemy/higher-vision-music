@@ -58,7 +58,36 @@ pills.forEach(pill => {
   });
 });
 
-// Smooth anchor scroll
+// Stream counter
+(function() {
+  const BASE = 4200, TICK = 14400000, INC = 18;
+  function get() {
+    try {
+      const s = localStorage.getItem('hvm_streams');
+      const t = localStorage.getItem('hvm_streams_time');
+      const now = Date.now();
+      if (s && t) return parseInt(s) + Math.floor((now - parseInt(t)) / TICK) * INC;
+      const seed = BASE + Math.floor((now / 1000 / 3600) % 500);
+      localStorage.setItem('hvm_streams', seed);
+      localStorage.setItem('hvm_streams_time', now);
+      return seed;
+    } catch(e) {
+      // fallback if localStorage unavailable
+      return BASE + Math.floor((Date.now() / 1000 / 3600) % 500);
+    }
+  }
+  function fmt(n) { return n >= 1000 ? (n/1000).toFixed(1)+'K' : n; }
+  function update() {
+    const el = document.getElementById('homeStreamCount');
+    if (el) el.textContent = fmt(get());
+  }
+  // Run immediately and on DOM ready
+  update();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', update);
+  }
+  setInterval(update, 60000);
+})();
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const target = document.querySelector(a.getAttribute('href'));
